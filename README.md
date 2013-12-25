@@ -1,0 +1,3 @@
+# Docker configuration for FrontStack
+
+
