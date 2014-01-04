@@ -1,14 +1,16 @@
 FROM ubuntu:12.04
 MAINTAINER Tomas Aparicio
 
-RUN apt-get install -y git gcc make nano
-RUN wget -O http://nodejs.org/dist/v0.10.24/node-v0.10.24-linux-x64.tar.gz | tar -C /usr/local/ --strip-components=1 -zxv
-RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ precise universe" >> /etc/apt/sources.list
-RUN apt-get update
-RUN apt-get install -y nodejs
-#RUN apt-get install -y nodejs=0.6.12~dfsg1-1ubuntu1
-RUN mkdir /var/www
+RUN apt-get install -y git gcc make
+RUN wget https://sourceforge.net/projects/frontstack/files/latest/download -O ~/frontstack-latest.tar.gz
+RUN tar xvfz ~/frontstack-latest.tar.gz -C ~/fronstack
+RUN echo '[ -f ~/fronstack/scripts/setenv.sh ] && . ~/fronstack/scripts/setenv.sh' >> ~/.bash_profile
+RUN bash ~/fronstack/scripts/setenv.sh
+RUN ~/frontstack/node/bin/npm install -g http-server
 
-ADD app.js /var/www/app.js
+RUN mkdir ~/www
+RUN echo 'Hello World powered by FrontStack' > ~/www/index.html
 
-CMD ["/usr/bin/node", "/var/www/app.js"]
+# custom commands
+#ADD app.js ~/www/app.js
+CMD ["~/frontstack/node/bin/http-server", "~/www", "-p", "80"]
