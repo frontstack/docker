@@ -2,11 +2,13 @@
 
 > Setup a [Docker][1] container based on the [FrontStack][2] environment
 
-## Non-GNU/Linux installations
+## Installation
 
-Docker can only run in GNU/Linux, however you can virtualize it in order to run it over other OS
+### Non-GNU/Linux installations
 
-1. Download [Virtualbox][3] and [Vagrant][4] for your OS (64 bit)
+Docker can only run in GNU/Linux, however you can virtualize it in order to run over any other OS
+
+1. Download and install [Virtualbox][3] and [Vagrant][4] for your OS (64 bit)
 
 2. Clone this repository
 ```
@@ -21,17 +23,30 @@ $ vagrant up
 $ vagrant ssh
 ```
 
-4. Start the FrontStack container
+### Create the container
+
+Create the FrontStack container
 ```
-$ docker build github.com/frontstack/docker
-```
-```
-$ docker run
+$ cd docker && sudo docker build -t frontstack .
 ```
 
-## GNU/Linux installation
+### Run it
+```
+$ sudo docker run frontstack
+```
+
+For debugging or testing purposes, you can open a Bash session inside the container
+```
+$ sudo docker run -t -i frontstack /opt/frontstack/bash.sh
+```
+
+### Enjoy it
+
+[Open][6] the sample application
 
 
+
+For more information about the available commands, see the Docker [documentation][5]
 
 ## Host requirements
 
@@ -45,3 +60,5 @@ $ docker run
 [2]: http://github.com/frontstack/frontstack
 [3]: https://www.virtualbox.org/wiki/Downloads
 [4]: http://downloads.vagrantup.com/
+[5]: http://docs.docker.io/en/latest/commandline/cli/
+[6]: http://localhost:3000

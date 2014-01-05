@@ -8,14 +8,14 @@ WORKDIR /opt
 # FrontStack installation
 RUN wget --no-check-certificate https://sourceforge.net/projects/frontstack/files/latest/download -O frontstack-latest.tar.gz
 RUN mkdir frontstack && tar xvfz frontstack-latest.tar.gz -C frontstack
-RUN echo '[ -f frontstack/scripts/setenv.sh ] && . frontstack/scripts/setenv.sh' >> $HOME/.bash_profile
-RUN frontstack/scripts/setenv.sh
+RUN rm -f frontstack-latest.tar.gz
+#RUN echo '[ -f /opt/frontstack/scripts/setenv.sh ] && . /opt/frontstack/scripts/setenv.sh' >> $HOME/.bash_profile
 RUN frontstack/node/bin/npm install -g http-server
 
 # sample app
 RUN mkdir www
 RUN echo 'Hello World powered by FrontStack' > www/index.html
 
-# start an HTTP server
+# start a HTTP server
 EXPOSE 3000
-CMD ["frontstack/node/bin/http-server", "www", "-p", "3000"]
+CMD ["/opt/frontstack/node/bin/node", "/opt/frontstack/packages/node/bin/http-server", "-p", "3000", "/opt/www" ]
