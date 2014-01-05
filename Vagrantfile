@@ -19,13 +19,7 @@ Vagrant.configure("2") do |config|
   # ports to fordward (customize to your needs)
   #
   config.vm.network :forwarded_port, guest: 3000, host: 3000
-  config.vm.network :forwarded_port, guest: 3001, host: 3001
-  config.vm.network :forwarded_port, guest: 3002, host: 3002
-  config.vm.network :forwarded_port, guest: 3003, host: 3003
-  config.vm.network :forwarded_port, guest: 3010, host: 3010
-  config.vm.network :forwarded_port, guest: 3011, host: 3011
   config.vm.network :forwarded_port, guest: 3443, host: 3443
-  config.vm.network :forwarded_port, guest: 35729, host: 35729
 
   config.ssh.forward_agent = true
 
