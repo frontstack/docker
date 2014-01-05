@@ -9,7 +9,6 @@ WORKDIR /opt
 RUN wget --no-check-certificate https://sourceforge.net/projects/frontstack/files/latest/download -O frontstack-latest.tar.gz
 RUN mkdir frontstack && tar xvfz frontstack-latest.tar.gz -C frontstack
 RUN rm -f frontstack-latest.tar.gz
-#RUN echo '[ -f /opt/frontstack/scripts/setenv.sh ] && . /opt/frontstack/scripts/setenv.sh' >> $HOME/.bash_profile
 RUN frontstack/node/bin/npm install -g http-server
 
 # sample app
