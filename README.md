@@ -1,6 +1,6 @@
 # Docker + FrontStack
 
-> Configuration to setup a [Docker][1] system with pre-installed [FrontStack][2] in Docker containers
+> Setup a [Docker][1] container based on the [FrontStack][2] environment
 
 ## Non-GNU/Linux installations
 
@@ -10,22 +10,23 @@ Docker can only run in GNU/Linux, however you can virtualize it in order to run 
 
 2. Clone this repository
 ```
-$ git clone https://github.com/frontstacK/docker.git && cd docker
+$ git clone https://github.com/frontstack/docker.git && cd docker
 ```
 
 3. Start the VM
 ```
 $ vagrant up
 ```
-... and enter it
-
 ```
 $ vagrant ssh
 ```
 
-4. Start the FrontStack Docker container
+4. Start the FrontStack container
 ```
-$ cd docker && sudo docker build .
+$ docker build github.com/frontstack/docker
+```
+```
+$ docker run
 ```
 
 ## GNU/Linux installation
