@@ -1,5 +1,5 @@
 #
-# For more information about Vagrantfile options and provisiones, see
+# For more information about the Vagrantfile config see:
 # http://docs.vagrantup.com/v2/vagrantfile/
 #
 # OS autentication: vagrant / vagrant
