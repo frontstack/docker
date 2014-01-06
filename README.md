@@ -42,9 +42,10 @@ $ sudo docker run -t -i frontstack /opt/frontstack/bash.sh
 
 ### Enjoy it
 
-[Open][6] the sample application
-
-
+[Open][6] the sample application in a browser or test it from CLI
+```
+$ curl -i localhost:3000
+```
 
 For more information about the available commands, see the Docker [documentation][5]
 
