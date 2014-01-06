@@ -27,7 +27,7 @@ $ vagrant ssh
 
 From the cloned repository, create the FrontStack container
 ```
-$ cd docker && sudo docker build -t frontstack .
+$ sudo docker build -t frontstack .
 ```
 
 ### Run it
