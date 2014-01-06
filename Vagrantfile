@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   # configure your box image
   #
   # Docker-ready image (future use)
-  config.vm.box_url = "http://nitron-vagrant.s3-website-us-east-1.amazonaws.com/vagrant_ubuntu_12.04.3_amd64_virtualbox.box"
+  config.vm.box_url = "http://sourceforge.net/projects/frontstack/files/images/vagrant_ubuntu_12.04.3_docker_amd64_virtualbox.box/download"
 
   #
   # ports to fordward (customize to your needs)
