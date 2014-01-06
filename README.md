@@ -23,9 +23,9 @@ $ vagrant up
 $ vagrant ssh
 ```
 
-### Create the container
+### Build the container
 
-Create the FrontStack container
+From the cloned repository, create the FrontStack container
 ```
 $ cd docker && sudo docker build -t frontstack .
 ```
@@ -48,7 +48,6 @@ $ curl -i localhost:3000
 ```
 
 See the running containers processes
-
 ```
 $ sudo docker ps
 ```
