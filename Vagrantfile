@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
   #
   # configure your box image
   #
-  # Docker-ready image (future use)
+  # Docker-ready Ubuntu image
   config.vm.box_url = "http://sourceforge.net/projects/frontstack/files/images/vagrant_ubuntu_12.04.3_docker_amd64_virtualbox.box/download"
 
   #
