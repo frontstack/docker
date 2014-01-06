@@ -47,6 +47,16 @@ $ sudo docker run -t -i frontstack /opt/frontstack/bash.sh
 $ curl -i localhost:3000
 ```
 
+See the running containers processes
+
+```
+$ sudo docker ps
+```
+And the existent container images
+```
+$ sudo docker images
+```
+
 For more information about the available commands, see the Docker [documentation][5]
 
 ## Host requirements
