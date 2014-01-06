@@ -46,7 +46,13 @@ Vagrant.configure("2") do |config|
   # $ wget -q -O - https://gist.github.com/h2non/8268212/raw | sudo bash
   #
   config.vm.provision "shell" do |s|
-    s.inline = "wget -q -O - https://gist.github.com/h2non/8268212/raw | bash"
+    s.inline = <<SCRIPT
+if [ ! -f ~/.docker.lock ]; then
+  wget -qO --no-check-certificate - https://get.docker.io/gpg | apt-key add -
+  sudo apt-get -y curl
+  curl -s https://get.docker.io/ubuntu/ | bash
+  touch ~/.docker.lock
+fi
+SCRIPT
   end
-  
 end
