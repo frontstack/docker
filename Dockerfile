@@ -12,9 +12,9 @@ RUN rm -f frontstack-latest.tar.gz
 RUN frontstack/node/bin/npm install -g http-server
 
 # sample app
-RUN mkdir www
-RUN echo 'Hello World powered by FrontStack' > www/index.html
+RUN mkdir app
+RUN echo 'Hello World powered by FrontStack' > app/index.html
 
 # start the HTTP server
 EXPOSE 3000
-CMD ["/opt/frontstack/node/bin/node", "/opt/frontstack/packages/node/bin/http-server", "-p", "3000", "/opt/www" ]
+CMD ["/opt/frontstack/node/bin/node", "/opt/frontstack/packages/node/bin/http-server", "-p", "3000", "app" ]
