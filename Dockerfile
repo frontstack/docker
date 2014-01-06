@@ -15,6 +15,6 @@ RUN frontstack/node/bin/npm install -g http-server
 RUN mkdir www
 RUN echo 'Hello World powered by FrontStack' > www/index.html
 
-# start a HTTP server
+# start the HTTP server
 EXPOSE 3000
 CMD ["/opt/frontstack/node/bin/node", "/opt/frontstack/packages/node/bin/http-server", "-p", "3000", "/opt/www" ]
