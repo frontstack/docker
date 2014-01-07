@@ -72,3 +72,7 @@ For more information about the available commands, see the Docker [documentation
 [4]: http://downloads.vagrantup.com/
 [5]: http://docs.docker.io/en/latest/commandline/cli/
 [6]: http://localhost:3000
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/frontstack/docker/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
