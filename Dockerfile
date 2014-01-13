@@ -6,7 +6,7 @@ RUN apt-get install -y git gcc make wget
 WORKDIR /opt
 
 # FrontStack installation
-RUN wget --no-check-certificate https://sourceforge.net/projects/frontstack/files/latest/download -O frontstack-latest.tar.gz
+RUN wget http://sourceforge.net/projects/frontstack/files/latest/download -O frontstack-latest.tar.gz
 RUN mkdir frontstack && tar xvfz frontstack-latest.tar.gz -C frontstack
 RUN rm -f frontstack-latest.tar.gz
 RUN frontstack/node/bin/npm install -g http-server
